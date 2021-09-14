@@ -7,7 +7,8 @@ Requires a Linux computer due to gattlib underlying BLE scanning requiring Glib.
 
 import argparse
 from bluetooth.ble import DiscoveryService
-from time import time,sleep
+import time
+from time import sleep
 t0 = time.time()
 
 p = argparse.ArgumentParser(description="BLE scanner")

@@ -22,7 +22,7 @@ P = p.parse_args()
 
 timeout = P.timeout
 while time() < t0+3600:
-    print(int(time()-t0))
+    print(time()-t0)
     print(f"Scanning BLE devices for {timeout} seconds")
     svc = DiscoveryService()
     ble_devs = svc.discover(timeout)

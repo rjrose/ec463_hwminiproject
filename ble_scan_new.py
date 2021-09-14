@@ -30,4 +30,4 @@ while time() < t0+100:
     """for u, n in ble_devs.items():
         print(u, n)
     """
-    sleep(10-time()%10)
+    sleep(10-(time()-t0)%10)

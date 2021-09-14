@@ -7,6 +7,8 @@ Requires a Linux computer due to gattlib underlying BLE scanning requiring Glib.
 
 import argparse
 from bluetooth.ble import DiscoveryService
+import time
+t0 = time.time()
 
 p = argparse.ArgumentParser(description="BLE scanner")
 p.add_argument(
@@ -19,12 +21,11 @@ p.add_argument(
 P = p.parse_args()
 
 timeout = P.timeout
-
-print(f"Scanning BLE devices for {timeout} seconds")
-
-svc = DiscoveryService()
-ble_devs = svc.discover(timeout)
-
-print(len(ble_devs.items()))
-for u, n in ble_devs.items():
-    print(u, n)
+while time.time() < t0+3600:
+    print(f"Scanning BLE devices for {timeout} seconds")
+    print(time.time()-t0)
+    svc = DiscoveryService()
+    ble_devs = svc.discover(timeout)
+    print(len(ble_devs.items()))
+    for u, n in ble_devs.items():
+        print(u, n)

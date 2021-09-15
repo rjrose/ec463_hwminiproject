@@ -8,7 +8,7 @@ Requires a Linux computer due to gattlib underlying BLE scanning requiring Glib.
 import matplotlib.pyplot as plt
 import pylab
 from bluetooth.ble import DiscoveryService
-from time import time
+import time
 import sys
 
 monitor_period = sys.argv[1] # duration of test (s)
@@ -24,11 +24,11 @@ num_devices = []
 
 
 svc = DiscoveryService()
-t0 = time()
+t0 = time.time()
 
 # get data
-while time() < t0 + monitor_period:
-    msg = "Scanning BLE devices for " + scan_period + " seconds."
+while time.time() < t0 + monitor_period:
+	msg = "Scanning BLE devices for " + scan_period + " seconds."
     print(msg)
     timestamp = time.localtime()
     ble_devs = svc.discover(scan_period)

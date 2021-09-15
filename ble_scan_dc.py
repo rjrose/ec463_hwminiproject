@@ -28,7 +28,8 @@ t0 = time.time()
 
 # get data
 while time.time() < t0 + monitor_period:
-    print(f"Scanning BLE devices for {scan_period} seconds")
+	string msg = "Scanning BLE devices for " + scan_period + " seconds."
+    print(msg)
     timestamp = time.localtime()
     ble_devs = svc.discover(scan_period)
     count = len(ble_devs.items()) # number of devices

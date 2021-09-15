@@ -19,7 +19,7 @@ timestamps = []
 hrs = []
 mins = []
 secs = []
-time = []
+timeaxis = []
 num_devices = []
 
 
@@ -28,7 +28,7 @@ t0 = time.time()
 
 # get data
 while time.time() < t0 + monitor_period:
-    msg = "Scanning BLE devices for " + scan_period + " seconds."
+	msg = "Scanning BLE devices for " + scan_period + " seconds."
     print(msg)
     timestamp = time.localtime()
     ble_devs = svc.discover(scan_period)
@@ -39,12 +39,12 @@ while time.time() < t0 + monitor_period:
     hrs.append(timestamp.tm_hour)
     mins.append(timestamp.tm_min)
     sec.append(timestamp.tm_sec)
-    time.append(hrs[i] + mins[i]/60 + sec[i]/3600)
+    timeaxis.append(hrs[i] + mins[i]/60 + sec[i]/3600)
     num_devices.append(count)
     time.sleep(scan_frequency)
 
 # plot data
-plt.plot(time,num_devices)
+plt.plot(timeaxis,num_devices)
 plt.xlabel('time (hr)')
 plt.ylabel('# of devices')
 pylab.show()

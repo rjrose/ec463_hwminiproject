@@ -11,9 +11,9 @@ from bluetooth.ble import DiscoveryService
 import time
 import sys
 
-monitor_period = argv[1] # duration of test (s)
-scan_frequency = argv[2] # time between scans (s)
-scan_period = argv[3] # duration of each scan (s)
+monitor_period = sys.argv[1] # duration of test (s)
+scan_frequency = sys.argv[2] # time between scans (s)
+scan_period = sys.argv[3] # duration of each scan (s)
 
 timestamps = []
 hrs = []
@@ -28,7 +28,7 @@ t0 = time.time()
 
 # get data
 while time.time() < t0 + monitor_period:
-    msg = "Scanning BLE devices for " + scan_period + " seconds."
+	msg = "Scanning BLE devices for " + scan_period + " seconds."
     print(msg)
     timestamp = time.localtime()
     ble_devs = svc.discover(scan_period)

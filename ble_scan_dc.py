@@ -24,10 +24,10 @@ num_devices = []
 
 
 svc = DiscoveryService()
-t0 = time.time()
+t0 = time()
 
 # get data
-while time.time() < t0 + monitor_period:
+while time() < t0 + monitor_period:
     msg = "Scanning BLE devices for " + scan_period + " seconds."
     print(msg)
     timestamp = time.localtime()

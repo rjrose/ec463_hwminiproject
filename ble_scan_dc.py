@@ -8,7 +8,7 @@ Requires a Linux computer due to gattlib underlying BLE scanning requiring Glib.
 import matplotlib.pyplot as plt
 import pylab
 from bluetooth.ble import DiscoveryService
-import time
+from time import time
 import sys
 
 monitor_period = sys.argv[1] # duration of test (s)

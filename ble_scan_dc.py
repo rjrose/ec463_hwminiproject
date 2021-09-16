@@ -12,7 +12,8 @@ import time
 import sys
 
 monitor_period = sys.argv[1] # duration of test (s)
-scan_frequency = sys.argv[2] # time between scans (s)
+scan_frequency = int(sys.argv[2]) # time between scans (s)
+
 scan_period = sys.argv[3] # duration of each scan (s)
 scan_period_int = int(scan_period)
 

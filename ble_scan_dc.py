@@ -37,8 +37,8 @@ while time.time() < t0 + int(monitor_period):
     timestamps.append(timestamp)
     hrs.append(timestamp.tm_hour)
     mins.append(timestamp.tm_min)
-    sec.append(timestamp.tm_sec)
-    timeaxis.append(hrs[i] + mins[i]/60 + sec[i]/3600)
+    secs.append(timestamp.tm_sec)
+    timeaxis.append(hrs[i] + mins[i]/60 + secs[i]/3600)
     num_devices.append(count)
     time.sleep(scan_frequency)
 

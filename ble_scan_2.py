@@ -40,3 +40,4 @@ while time.time() < t0 + int(monitor_period):
     data.write(sample + "\n")
     time.sleep(scan_frequency)
 
+data.close()

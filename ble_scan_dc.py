@@ -22,8 +22,6 @@ secs = []
 timeaxis = []
 num_devices = []
 
-
-svc = DiscoveryService()
 t0 = time.time()
 
 # get data
@@ -31,6 +29,7 @@ while time.time() < t0 + int(monitor_period):
     msg = "Scanning BLE devices for " + scan_period + " seconds."
     print(msg)
     timestamp = time.localtime()
+    svc = DiscoveryService()
     ble_devs = svc.discover(scan_period)
     count = len(ble_devs.items()) # number of devices
     print(time.asctime(timestamp))

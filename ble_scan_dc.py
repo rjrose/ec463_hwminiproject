@@ -13,7 +13,7 @@ import sys
 
 monitor_period = sys.argv[1] # duration of test (s)
 scan_frequency = sys.argv[2] # time between scans (s)
-scan_period = sys.argv[3] # duration of each scan (s)
+scan_period = int(sys.argv[3]) # duration of each scan (s)
 
 timestamps = []
 hrs = []
@@ -23,6 +23,7 @@ timeaxis = []
 num_devices = []
 
 t0 = time.time()
+
 
 # get data
 while time.time() < t0 + int(monitor_period):

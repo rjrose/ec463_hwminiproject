@@ -32,7 +32,7 @@ while time.time() < t0 + int(monitor_period):
     print(msg)
     timestamp = time.localtime()
     svc = DiscoveryService()
-    ble_devs = svc.discover(scan_period)
+    ble_devs = svc.discover(scan_period_int)
     count = len(ble_devs.items()) # number of devices
     print(time.asctime(timestamp))
     print('# of devices: ' + str(count))
@@ -40,7 +40,7 @@ while time.time() < t0 + int(monitor_period):
     hrs.append(timestamp.tm_hour)
     mins.append(timestamp.tm_min)
     secs.append(timestamp.tm_sec)
-    timeaxis.append(hrs[i] + mins[i]/60 + secs[i]/3600)
+    timeaxis.append(timestamp.tm_hour + timestamp.tm_min/60 + timestamp.tm_sec/3600)
     num_devices.append(count)
     time.sleep(scan_frequency)
 

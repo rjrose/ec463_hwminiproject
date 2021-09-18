@@ -9,3 +9,5 @@ From the plot, a considerable amount of variation can be seen over time, suggest
 As for difficulties with the Raspberry Pi, there were some missing packages that had to be installed using pip before the scripts could be run. Otherwise, the execution of this task was straightforward.
 
 In addition to this task, we also created some scripts to collect and plot bluetooth data over time. Our script titled ble_scan_2.py collects the number of bluetooth devices in range for a specified runtime, measurement time, and time between measurements. Then, ble_plot.py plots that data for analysis.
+
+![image](BLE_plot.png)
